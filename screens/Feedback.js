@@ -14,8 +14,8 @@ import { ReviewFormular } from "../components/ReviewFormular";
 const Feedback = () => {
   const [reviews, setReviews] = useState([
     {
-      nick: "Joe",
-      text: "Amazing app",
+      nick: "nick",
+      text: "review_placeholder",
       title: "Title",
       rating: 3,
       id: 1,
@@ -26,10 +26,10 @@ const Feedback = () => {
     setReviews((prevReviews) => {
       return [
         {
-          nick: nick,
-          title: title,
-          text: text,
-          rating: rating,
+          nick,
+          text,
+          title,
+          rating,
           id: Math.random().toString(),
         },
         ...prevReviews,

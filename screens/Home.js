@@ -18,7 +18,6 @@ export const Home = ({ route, navigation }) => {
   return (
     <View style={{ backgroundColor: "white", flex: 1 }}>
       {/* <Review item={{ text: "lol", id: "20" }} /> */}
-      {/* <ReviewFormular /> */}
     </View>
   );
 };

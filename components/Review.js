@@ -23,13 +23,11 @@ const Review = ({ item }) => {
       <UserProfile nick={nick} />
 
       <View style={{ position: "absolute", left: 180, top: 10 }}>
-        <AirbnbRating
+        <Rating
           readonly
-          // startingValue={rating}
-          size={25}
-          reviewSize={25}
-          showRating={false}
-          starContainerStyle={{ padding: 5 }}
+          startingValue={rating}
+          imageSize={26}
+          tintColor="#999"
         />
       </View>
 
