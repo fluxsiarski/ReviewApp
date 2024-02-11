@@ -67,7 +67,12 @@ export const ReviewFormular = ({ submitHandler }) => {
       <Button
         title="add review"
         color={"red"}
-        onPress={() => submitHandler(nick, text, title, rating)}
+        onPress={() => {
+          console.log("Nick:", nick);
+          console.log("Title:", title);
+          console.log("Text:", text);
+          submitHandler(nick, text, title, rating);
+        }}
       />
     </View>
   );

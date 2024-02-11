@@ -6,9 +6,9 @@ import {
   View,
   Keyboard,
   ScrollView,
+  Alert,
 } from "react-native";
 import React, { useState } from "react";
-import AddReview from "../components/AddReview";
 import Review from "../components/Review";
 import { ReviewFormular } from "../components/ReviewFormular";
 
@@ -23,19 +23,30 @@ const Feedback = () => {
     },
   ]);
 
-  const submitHandler = (nick, title, text, rating) => {
-    setReviews((prevReviews) => {
-      return [
-        {
-          nick,
-          text,
-          title,
-          rating,
-          id: Math.random().toString(),
-        },
+  const submitHandler = (nick, text, title, rating) => {
+    let errorMessage = "";
+    console.log(`Nick length at submission: ${nick.length}`);
+    console.log(`Text length at submission: ${text.length}`);
+    console.log(`Title length at submission: ${title.length}`);
+
+    if (nick.length < 2) {
+      errorMessage += "Nick must be at least 2 characters long.\n";
+    }
+    if (title.length < 3) {
+      errorMessage += "Title must be at least 3 characters long.\n";
+    }
+    if (text.length < 15) {
+      errorMessage += "Review text must be at least 15 characters long.\n";
+    }
+
+    if (errorMessage) {
+      Alert.alert("Error", errorMessage);
+    } else {
+      setReviews((prevReviews) => [
+        { nick, text, title, rating, id: Math.random().toString() },
         ...prevReviews,
-      ];
-    });
+      ]);
+    }
   };
 
   return (
