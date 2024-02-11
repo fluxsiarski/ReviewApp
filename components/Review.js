@@ -17,7 +17,7 @@ const Review = ({ item }) => {
         gap: 20,
         borderRadius: 50,
         marginTop: 20,
-        width: width - 60,
+        width: width - 40,
       }}
     >
       <UserProfile nick={nick} />

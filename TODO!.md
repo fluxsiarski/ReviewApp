@@ -1,1 +1,4 @@
-# user has to provide its name, review text and stars when adding a review
+# Add logic to reviews
+
+- username ; max 20 chars
+- tile ; max X chars

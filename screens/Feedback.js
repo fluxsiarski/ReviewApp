@@ -5,6 +5,7 @@ import {
   TouchableWithoutFeedback,
   View,
   Keyboard,
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import AddReview from "../components/AddReview";
@@ -51,11 +52,16 @@ const Feedback = () => {
       </Text>
 
       <View style={s.content}>
-        <ReviewFormular submitHandler={submitHandler} />
+        {/* <ReviewFormular submitHandler={submitHandler} /> */}
         <View style={s.list}>
           <FlatList
             keyExtractor={(item) => item.id.toString()}
             data={reviews}
+            // stickyHeaderHiddenOnScroll
+            stickyHeaderIndices={[0]}
+            ListHeaderComponent={
+              <ReviewFormular submitHandler={submitHandler} />
+            }
             renderItem={({ item }) => {
               return <Review item={item} />;
             }}
