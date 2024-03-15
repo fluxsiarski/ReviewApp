@@ -10,15 +10,15 @@ export const ReviewFormular = ({ submitHandler }) => {
   const [rating, setRating] = useState(0);
 
   const changeUserHandler = (val) => {
-    setUserNick(val);
+    setUserNick(val.trim());
   };
 
   const changeReviewHandler = (val) => {
-    setText(val);
+    setText(val.trim());
   };
 
   const changeReviewTitleHandler = (val) => {
-    setTitle(val);
+    setTitle(val.trim());
   };
 
   return (

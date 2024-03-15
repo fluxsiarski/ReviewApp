@@ -26,8 +26,8 @@ const Feedback = () => {
   const submitHandler = (nick, text, title, rating) => {
     let errorMessage = "";
     console.log(`Nick length at submission: ${nick.length}`);
-    console.log(`Text length at submission: ${text.length}`);
     console.log(`Title length at submission: ${title.length}`);
+    console.log(`Text length at submission: ${text.length}`);
 
     if (nick.length < 2) {
       errorMessage += "Nick must be at least 2 characters long.\n";

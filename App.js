@@ -51,6 +51,7 @@ export default function App() {
           component={Home}
           options={{
             headerRight: () => <Button title="Leave feedback!" />,
+            // headerShown: false,
           }}
         />
         <Stack.Screen name="Feedback" component={Feedback} options={{}} />
